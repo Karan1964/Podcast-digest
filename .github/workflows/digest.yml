@@ -1,8 +1,12 @@
 name: Podcast Digest
 
-# Runs only on its schedule or when you press "Run workflow".
-# No pull_request triggers, so outside contributors can never reach the secrets.
+# Runs on its schedule, when you press "Run workflow", or when the owner pushes
+# a change to run-now.txt (lets Claude start a run). No pull_request triggers,
+# so outside contributors can never reach the secrets.
 on:
+  push:
+    branches: [main]
+    paths: [run-now.txt]
   schedule:
     - cron: "7 2 * * *"   # 07:37 IST daily
   workflow_dispatch:
@@ -39,7 +43,7 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.PODCAST_TELEGRAM_BOT_TOKEN || secrets.PODCAST_TELEGRAM_TOKEN || secrets.PODCAST_TELEGRAM_BOT || secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID || secrets.TELEGRAM_CHAT }}
-          TEST_LATEST: ${{ github.event.inputs.mode == 'latest_per_channel' && '1' || '' }}
+          TEST_LATEST: ${{ (github.event.inputs.mode == 'latest_per_channel' || (github.event_name == 'push' && contains(github.event.head_commit.message, '[latest]'))) && '1' || '' }}
         run: python podcast_digest.py
 
       - name: Save state
