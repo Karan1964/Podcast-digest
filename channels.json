@@ -1,15 +1,49 @@
 {
   "_note": "Add or remove channels by handle. channel_id is optional; the bot looks it up and caches it in state.json.",
   "channels": [
-    {"handle": "kushallodha548", "name": "Kushal Lodha"},
-    {"handle": "akshatzayn", "name": "Akshat Shrivastava"},
-    {"handle": "groww", "name": "Groww"},
-    {"handle": "sunday_investing", "name": "Sunday Investing"},
-    {"handle": "financewithsharan", "name": "Finance With Sharan"},
-    {"handle": "soniashenoyofficial", "name": "Sonia Shenoy"},
-    {"handle": "theindiaopportunity", "name": "The India Opportunity"},
-    {"handle": "soicfinance", "name": "SOIC"},
-    {"handle": "carachanaranade", "name": "CA Rachana Ranade"},
-    {"handle": "anantladhaofficial", "name": "Anant Ladha"}
+    {
+      "handle": "kushallodha548",
+      "name": "Kushal Lodha"
+    },
+    {
+      "handle": "akshatzayn",
+      "name": "Akshat Shrivastava"
+    },
+    {
+      "handle": "groww",
+      "name": "Groww"
+    },
+    {
+      "handle": "sunday_investing",
+      "name": "Sunday Investing"
+    },
+    {
+      "handle": "financewithsharan",
+      "name": "Finance With Sharan"
+    },
+    {
+      "handle": "soniashenoyofficial",
+      "name": "Sonia Shenoy"
+    },
+    {
+      "handle": "theindiaopportunity",
+      "name": "The India Opportunity"
+    },
+    {
+      "handle": "soicfinance",
+      "name": "SOIC"
+    },
+    {
+      "handle": "carachanaranade",
+      "name": "CA Rachana Ranade"
+    },
+    {
+      "handle": "anantladhaofficial",
+      "name": "Anant Ladha"
+    },
+    {
+      "handle": "thebroadview",
+      "name": "The Broadview"
+    }
   ]
 }
