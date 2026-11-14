@@ -859,8 +859,10 @@ def discover(state: dict, channels: list[dict]) -> list[dict]:
     processed = state.setdefault("processed", {})
     first_run = not processed and not state.get("initialised")
     cutoff = datetime.now(timezone.utc) - timedelta(hours=FIRST_RUN_LOOKBACK_HOURS)
+    known = state.setdefault("channels_seen", sorted(state.get("channel_ids", {}).keys()))
     new = []
     for ch in channels:
+        is_new_channel = ch["handle"] not in known
         cid = ch.get("channel_id") or resolve_channel_id(ch["handle"], state)
         if not cid:
             continue
@@ -872,7 +874,7 @@ def discover(state: dict, channels: list[dict]) -> list[dict]:
         for v in feed:
             if v["id"] in processed:
                 continue
-            if first_run:
+            if first_run or is_new_channel:  # newly added channel: only the last 48h
                 try:
                     pub = datetime.fromisoformat(v["published"].replace("Z", "+00:00"))
                 except ValueError:
@@ -883,6 +885,8 @@ def discover(state: dict, channels: list[dict]) -> list[dict]:
             v["handle"] = ch["handle"]
             v["channel_name"] = ch.get("name") or ch["handle"]
             new.append(v)
+        if is_new_channel:
+            known.append(ch["handle"])
     state["initialised"] = True
     # videos queued from earlier runs (they may have dropped off a busy feed)
     seen_ids = {v["id"] for v in new}
