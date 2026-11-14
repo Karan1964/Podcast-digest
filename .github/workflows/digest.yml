@@ -37,8 +37,8 @@ jobs:
       - name: Run digest
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.PODCAST_TELEGRAM_BOT_TOKEN || secrets.PODCAST_TELEGRAM_TOKEN || secrets.PODCAST_TELEGRAM_BOT || secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID || secrets.TELEGRAM_CHAT }}
           TEST_LATEST: ${{ github.event.inputs.mode == 'latest_per_channel' && '1' || '' }}
         run: python podcast_digest.py
 
