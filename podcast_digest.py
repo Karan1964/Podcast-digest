@@ -53,11 +53,11 @@ TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "")
 # used up is skipped for the rest of the run.
 SMART_MODELS = os.environ.get(
     "SMART_MODELS",
-    "gemini-3.8-flash,gemini-3.7-flash,gemini-3-flash-preview,gemini-2.5-flash",
+    "gemini-3.8-flash,gemini-3.7-flash,gemini-3.5-flash-lite,gemini-3.1-flash-lite",
 ).split(",")
 LITE_MODELS = os.environ.get(
     "LITE_MODELS",
-    "gemini-3.5-flash-lite,gemini-3.1-flash-lite,gemini-2.5-flash-lite",
+    "gemini-3.5-flash-lite,gemini-3.1-flash-lite",
 ).split(",")
 
 CHUNK_SECONDS = 20 * 60            # transcript chunk size
@@ -192,6 +192,10 @@ class QuotaExhausted(Exception):
     pass
 
 
+class EndOfVideo(Exception):
+    pass
+
+
 _client: Optional[genai.Client] = None
 _dead_models: set[str] = set()
 CALLS = {"smart": 0, "lite": 0}
@@ -220,18 +224,20 @@ def _is_daily_quota(err: Exception) -> bool:
 
 
 def call_gemini(chain: list[str], contents, config: types.GenerateContentConfig,
-                kind: str):
+                kind: str, end_probe: bool = False):
     """Try each model in turn. Returns the response. Raises QuotaExhausted when
-    every model in the chain is out of daily quota."""
+    every model in the chain is out of daily quota. With end_probe, an HTTP 400
+    means the requested video segment is past the end of the video."""
     last_err: Optional[Exception] = None
     for model in chain:
         model = model.strip()
         if not model or model in _dead_models:
             continue
+        cfg = config
         for attempt in range(3):
             try:
                 resp = client().models.generate_content(
-                    model=model, contents=contents, config=config)
+                    model=model, contents=contents, config=cfg)
                 CALLS[kind] += 1
                 return resp
             except genai_errors.ClientError as e:
@@ -247,6 +253,12 @@ def call_gemini(chain: list[str], contents, config: types.GenerateContentConfig,
                     log(f"{model}: per-minute limit, waiting {wait}s")
                     time.sleep(wait)
                     continue
+                if code == 400 and end_probe:
+                    raise EndOfVideo() from e
+                if code == 400 and getattr(cfg, "thinking_config", None) is not None \
+                        and "think" in str(e).lower():
+                    cfg = cfg.model_copy(update={"thinking_config": None})
+                    continue  # this model doesn't take the thinking setting
                 if code in (400, 403, 404):
                     # model not available to this key, or bad request for it
                     log(f"{model}: HTTP {code} ({str(e)[:200]}), trying next model")
@@ -256,9 +268,11 @@ def call_gemini(chain: list[str], contents, config: types.GenerateContentConfig,
                 raise
             except genai_errors.ServerError as e:
                 last_err = e
-                wait = 20 * (attempt + 1)
-                log(f"{model}: server error, retrying in {wait}s")
-                time.sleep(wait)
+                if attempt >= 1:  # retried once already; failed calls still use quota
+                    log(f"{model}: server error again ({str(e)[:150]}), trying next model")
+                    break
+                log(f"{model}: server error ({str(e)[:150]}), retrying in 30s")
+                time.sleep(30)
     if all(m.strip() in _dead_models for m in chain if m.strip()):
         raise QuotaExhausted(kind)
     raise RuntimeError(f"all {kind} models failed: {type(last_err).__name__}: {str(last_err)[:200]}")
@@ -405,13 +419,11 @@ def transcribe(video_id: str, seconds: Optional[int]) -> str:
             types.Part(text=TRANSCRIBE_PROMPT.format(start=fmt_ts(start), end=fmt_ts(end))),
         ])
         try:
-            resp = call_gemini(LITE_MODELS, contents, cfg, "lite")
-        except QuotaExhausted:
-            raise
-        except Exception:
-            if not known and start > 0:
-                break  # ran past the end of the video
-            raise
+            resp = call_gemini(LITE_MODELS, contents, cfg, "lite",
+                               end_probe=(not known and start > 0))
+        except EndOfVideo:
+            log(f"  reached end of video (about {fmt_ts(start)})")
+            break
         text = (resp.text or "").strip()
         if text and text != "NO_SPEECH":
             pieces.append(fix_chunk_timestamps(text, start))
@@ -434,8 +446,8 @@ class Item(BaseModel):
 class Stock(BaseModel):
     name: str
     nse_symbol: str = Field("", description="NSE symbol if known, e.g. KEI, RADICO. Empty if unsure.")
-    stance: str = Field(description="Speaker's view: Bullish, Bearish, Neutral, Avoid, or Mentioned")
-    thesis: str = Field(description="Why - the speaker's full reasoning")
+    stance: str = Field("Mentioned", description="Speaker's view: Bullish, Bearish, Neutral, Avoid, or Mentioned")
+    thesis: str = Field("", description="Why - the speaker's full reasoning")
     details: list[str] = Field(default_factory=list, description="Every number, fact and point said about it")
     said_by: str = ""
     timestamp: str = ""
@@ -443,7 +455,7 @@ class Stock(BaseModel):
 
 class Framework(BaseModel):
     name: str
-    steps: list[str]
+    steps: list[str] = Field(default_factory=list)
     how_to_use: str = ""
     example: str = ""
     timestamp: str = ""
@@ -556,27 +568,79 @@ def merge_missed(base: Digest, extra: Digest) -> int:
     return added
 
 
-def extract(video: dict, ctype: str, transcript: str) -> tuple[Digest, int]:
+JSON_SHAPE = """
+Reply with ONE JSON object, no other text, in exactly this shape (lists may be empty):
+{"content_type": "", "speakers": [""], "one_liner": "", "verdict": "",
+ "stocks": [{"name": "", "nse_symbol": "", "stance": "Bullish|Bearish|Neutral|Avoid|Mentioned",
+             "thesis": "", "details": [""], "said_by": "", "timestamp": "mm:ss"}],
+ "themes": [{"text": "", "timestamp": "", "tag": ""}],
+ "frameworks": [{"name": "", "steps": [""], "how_to_use": "", "example": "", "timestamp": ""}],
+ "key_facts": [ITEM], "ipo_details": [ITEM], "bull_case": [ITEM], "bear_case": [ITEM],
+ "valuation": [ITEM], "event_impacts": [ITEM], "market_calls": [ITEM], "red_flags": [ITEM],
+ "takeaways": [ITEM], "books_people": [ITEM]}
+where ITEM is {"text": "", "timestamp": ""}.
+"""
+
+
+def _thinking_low():
+    try:
+        return types.ThinkingConfig(thinking_level="low")
+    except Exception:  # noqa: BLE001 - older SDK
+        try:
+            return types.ThinkingConfig(thinking_budget=2048)
+        except Exception:  # noqa: BLE001
+            return None
+
+
+def parse_digest(text: str) -> Digest:
+    t = (text or "").strip()
+    t = re.sub(r"^```(?:json)?\s*|\s*```$", "", t)
+    start, end = t.find("{"), t.rfind("}")
+    if start < 0 or end <= start:
+        raise ValueError("no JSON object in reply")
+    return Digest.model_validate(json.loads(t[start:end + 1]))
+
+
+def ask_digest(chain: list[str], prompt: str, kind: str) -> Digest:
+    """Ask each model in turn until one returns a usable digest."""
     cfg = types.GenerateContentConfig(
-        response_mime_type="application/json", response_schema=Digest,
-        temperature=0.2, max_output_tokens=60000)
+        response_mime_type="application/json", temperature=0.2,
+        max_output_tokens=32768, thinking_config=_thinking_low())
+    all_quota = True
+    last: Optional[Exception] = None
+    for model in chain:
+        if model.strip() in _dead_models:
+            continue
+        try:
+            resp = call_gemini([model], prompt + JSON_SHAPE, cfg, kind)
+            return parse_digest(resp.text)
+        except QuotaExhausted:
+            continue
+        except Exception as e:  # noqa: BLE001
+            all_quota = False
+            last = e
+            log(f"  {model}: no usable digest ({type(e).__name__}: {str(e)[:150]})")
+    if all_quota and last is None:
+        raise QuotaExhausted(kind)
+    raise RuntimeError(f"no model produced a digest: {type(last).__name__}: {str(last)[:200]}")
+
+
+def extract(video: dict, ctype: str, transcript: str) -> tuple[Digest, int]:
     prompt = EXTRACT_PROMPT.format(
         channel=video["channel_name"], title=video["title"],
         focus=TYPE_FOCUS.get(ctype, TYPE_FOCUS["general"]),
         types=", ".join(CONTENT_TYPES), transcript=transcript)
-    digest: Digest = call_gemini(SMART_MODELS, prompt, cfg, "smart").parsed
-    if digest is None:
-        raise RuntimeError("extraction returned no structured output")
+    digest = ask_digest(SMART_MODELS, prompt, "smart")
 
     added = 0
     try:
         check_prompt = CHECK_PROMPT.format(
             notes=digest.model_dump_json(), transcript=transcript)
-        missed: Digest = call_gemini(LITE_MODELS, check_prompt, cfg, "lite").parsed
+        missed = ask_digest(LITE_MODELS, check_prompt, "lite")
         if missed is not None:
             added = merge_missed(digest, missed)
     except QuotaExhausted:
-        raise
+        log("  completeness check skipped (Flash-Lite daily quota used up)")
     except Exception as e:  # noqa: BLE001 - the check is a bonus, never fatal
         log(f"  completeness check skipped ({type(e).__name__})")
     return digest, added
