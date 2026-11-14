@@ -204,6 +204,16 @@ def client() -> genai.Client:
     return _client
 
 
+QUOTA_HITS: list[str] = []
+
+
+def _quota_name(err: Exception) -> str:
+    """Short name of the quota that was hit, from Google's error text."""
+    s = str(err)
+    m = re.search(r"quota[_ ]?(?:metric|id)?['\":\s]+([\w./-]+)", s, re.I)
+    return m.group(1)[:80] if m else s[:120]
+
+
 def _is_daily_quota(err: Exception) -> bool:
     s = str(err).lower()
     return "perday" in s or "per day" in s or "requests_per_day" in s or "daily" in s
@@ -228,7 +238,8 @@ def call_gemini(chain: list[str], contents, config: types.GenerateContentConfig,
                 last_err = e
                 code = getattr(e, "code", None)
                 if code == 429 and _is_daily_quota(e):
-                    log(f"{model}: daily quota used up, moving on")
+                    QUOTA_HITS.append(f"{model}: {_quota_name(e)}")
+                    log(f"{model}: daily quota used up ({_quota_name(e)}), moving on")
                     _dead_models.add(model)
                     break
                 if code == 429:
@@ -238,7 +249,7 @@ def call_gemini(chain: list[str], contents, config: types.GenerateContentConfig,
                     continue
                 if code in (400, 403, 404):
                     # model not available to this key, or bad request for it
-                    log(f"{model}: HTTP {code}, trying next model")
+                    log(f"{model}: HTTP {code} ({str(e)[:200]}), trying next model")
                     if code == 404:
                         _dead_models.add(model)
                     break
@@ -250,7 +261,7 @@ def call_gemini(chain: list[str], contents, config: types.GenerateContentConfig,
                 time.sleep(wait)
     if all(m.strip() in _dead_models for m in chain if m.strip()):
         raise QuotaExhausted(kind)
-    raise RuntimeError(f"all {kind} models failed: {type(last_err).__name__}")
+    raise RuntimeError(f"all {kind} models failed: {type(last_err).__name__}: {str(last_err)[:200]}")
 
 
 # ----------------------------------------------------------------------------
@@ -911,6 +922,7 @@ def main() -> int:
     budget = DAILY_VIDEO_BUDGET
     done, queued, failed, check_added = 0, 0, [], 0
     quota_out = False
+    reasons: list[tuple[dict, str]] = []
     pending = state.setdefault("pending", {})
 
     def queue(v: dict) -> None:
@@ -922,6 +934,10 @@ def main() -> int:
         if quota_out or done >= MAX_VIDEOS_PER_RUN or secs > budget:
             queued += 1
             queue(v)
+            why = ("Gemini daily quota" if quota_out else
+                   "max videos per run" if done >= MAX_VIDEOS_PER_RUN else
+                   f"7h video budget ({fmt_ts(budget)} left, video {fmt_ts(secs)})")
+            reasons.append((v, why))
             continue
         log(f"processing {v['id']} ({v['channel_name']}, {fmt_ts(secs)}, {v['ctype']})")
         try:
@@ -945,10 +961,11 @@ def main() -> int:
             quota_out = True
             queued += 1
             queue(v)
+            reasons.append((v, "Gemini daily quota"))
         except Exception as e:  # noqa: BLE001
             n = attempts.get(v["id"], 0) + 1
             attempts[v["id"]] = n
-            log(f"  failed ({type(e).__name__}), attempt {n}/{MAX_ATTEMPTS}")
+            log(f"  failed ({type(e).__name__}: {str(e)[:300]}), attempt {n}/{MAX_ATTEMPTS}")
             if n >= MAX_ATTEMPTS:
                 processed[v["id"]] = {"date": today, "status": "failed"}
                 attempts.pop(v["id"], None)
@@ -957,12 +974,16 @@ def main() -> int:
             else:
                 queued += 1
                 queue(v)
+                reasons.append((v, f"error, will retry ({type(e).__name__}: {str(e)[:120]})"))
         save_state(state)
 
     # Run note only when something needs your attention
     notes = []
-    if queued:
-        notes.append(f"{queued} video(s) queued for tomorrow (daily limit)")
+    for v, why in reasons:
+        notes.append(f'Queued for next run: <a href="https://youtu.be/{v["id"]}">{esc(v["title"])}</a> '
+                     f"({esc(v['channel_name'])}) - {esc(why)}")
+    if QUOTA_HITS:
+        notes.append("Limits hit: " + esc("; ".join(dict.fromkeys(QUOTA_HITS))))
     for v in failed:
         notes.append(f'Could not process <a href="https://youtu.be/{v["id"]}">{esc(v["title"])}</a> '
                      f"after {MAX_ATTEMPTS} tries")
