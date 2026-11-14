@@ -1,0 +1,52 @@
+name: Podcast Digest
+
+# Runs only on its schedule or when you press "Run workflow".
+# No pull_request triggers, so outside contributors can never reach the secrets.
+on:
+  schedule:
+    - cron: "7 2 * * *"   # 07:37 IST daily
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "daily = new videos only; latest_per_channel = test with each channel's newest video"
+        type: choice
+        options: [daily, latest_per_channel]
+        default: daily
+
+permissions:
+  contents: write          # to commit state.json (list of processed video IDs)
+
+concurrency:
+  group: podcast-digest
+  cancel-in-progress: false
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Run digest
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TEST_LATEST: ${{ github.event.inputs.mode == 'latest_per_channel' && '1' || '' }}
+        run: python podcast_digest.py
+
+      - name: Save state
+        if: always()
+        run: |
+          git config user.name "digest-bot"
+          git config user.email "digest-bot@users.noreply.github.com"
+          git add state.json
+          git diff --cached --quiet || git commit -m "Update processed videos [skip ci]"
+          git push
