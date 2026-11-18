@@ -1,5 +1,7 @@
 {
- "attempts": {},
+ "attempts": {
+  "udnTDIetwNQ": 1
+ },
  "channel_ids": {
   "akshatzayn": "UCqW8jxh4tH1Z1sWPbkGWL4g",
   "anantladhaofficial": "UCWHCXSKASuSzao_pplQ7SPw",
@@ -27,7 +29,16 @@
   "thebroadview"
  ],
  "initialised": true,
- "pending": {},
+ "pending": {
+  "udnTDIetwNQ": {
+   "channel_name": "CA Rachana Ranade",
+   "description": "\u2714\ufe0fREITs & InvITS- Basics to Valuation: \nCoupon Code: CARRYT \nhttps://www.rachanaranade.in/products/1f5fd709-7852-47c2-a9ce-5d4be23fd1d4\n-------------------------------------------------------------------------------------------------------------\n\u2714\ufe0f Learn Stock Market in Simple Language: https://www.rachanaranade.in/products\nFor any queries drop a WhatsApp message on +91 97635 04342\n--------------------------------------------------------------------------------------------------------------\n\u2714\ufe0fTo open a free demat account click here: https://link.rachanaranade.com/Zerodha\n\u2714\ufe0f All Social Media Handles: https://linktr.ee/RachanaRanade\n--------------------------------------------------------------------------------------------------------------\nSpam-free Health/Term Insurance - https://ditto.sh/ty8y6t\n____________________________________________________________________\nAther Energy, Aditya Birla Real Estate, Ather Energy Q2 FY27 Results, Aditya Birla Real Estate Q2 Results, Q2 FY27 Results, Q2 FY27 Earnings, Stock Market Analysis, Indian Stock Market, Profitability Analysis, Loss to Profit Turnaround, Companies Turning Profitable, Operating Leverage Explained, Operating Profit, Operating Loss, Earnings Analysis, Quarterly Results Analysis, Ather Energy Stock Analysis, Ather Energy Share, Aditya Birla Real Estate Share, Real Estate Stocks, EV Stocks India, Electric Vehicle Industry, Indian Stock Market News, Fundamental Analysis, Business Analysis, Investing for Beginners, Stock Market for Beginners, CA Rachana Ranade, Rachana Ranade, Share Market Analysis, Investment Insights, Stock Market Education\n\nWhat is covered? \n00:00 - Introduction  \n02:07 - Operating Profit: What does it really tell us?  \n03:02 - Ather Energy: What drove its turnaround?  \n07:04 - Aditya Birla Real Estate: What drove its turnaround?  \n10:18 - Comparing the Turnarounds: How different were the journeys of these two companies?  \n\n#CARachanaRanade #ShareMarket #adityabirla #profitandloss",
+   "handle": "carachanaranade",
+   "id": "udnTDIetwNQ",
+   "published": "2026-11-17T13:30:21+00:00",
+   "title": "Two Companies: Loss to Operating Profit! But How? | CA Rachana Ranade"
+  }
+ },
  "processed": {
   "-7kAixdHbc4": {
    "date": "2026-11-04",
@@ -98,6 +109,10 @@
    "date": "2026-11-15",
    "status": "short_skipped"
   },
+  "2rZaO7fp7sc": {
+   "date": "2026-11-18",
+   "status": "short_skipped"
+  },
   "37oEIYGo4Gk": {
    "date": "2026-11-05",
    "status": "seeded"
@@ -134,6 +149,10 @@
    "date": "2026-11-15",
    "status": "done",
    "type": "guest_podcast"
+  },
+  "5wNmprpBt3A": {
+   "date": "2026-11-18",
+   "status": "short_skipped"
   },
   "5yfrAK_PbIo": {
    "date": "2026-11-04",
@@ -239,6 +258,10 @@
    "date": "2026-10-01",
    "status": "seeded"
   },
+  "ChjVdkxkyB0": {
+   "date": "2026-11-18",
+   "status": "short_skipped"
+  },
   "CmP6l4rilcA": {
    "date": "2026-11-03",
    "status": "seeded"
@@ -337,6 +360,10 @@
    "date": "2026-11-04",
    "status": "seeded"
   },
+  "KLuaQpZp4FU": {
+   "date": "2026-11-18",
+   "status": "short_skipped"
+  },
   "KPo2SY4BRTw": {
    "date": "2026-10-28",
    "status": "seeded"
@@ -352,6 +379,11 @@
   "L71Mhz54FEk": {
    "date": "2026-08-02",
    "status": "seeded"
+  },
+  "LeP49RVBaaE": {
+   "date": "2026-11-18",
+   "status": "done",
+   "type": "market_outlook"
   },
   "M_dXWAfA1dU": {
    "date": "2026-10-28",
@@ -380,6 +412,14 @@
   "PtSLamEHWjc": {
    "date": "2026-09-07",
    "status": "seeded"
+  },
+  "R6jAiDlJVls": {
+   "date": "2026-11-18",
+   "status": "short_skipped"
+  },
+  "RKvC5Siweig": {
+   "date": "2026-11-18",
+   "status": "short_skipped"
   },
   "RSwVLe7eYCA": {
    "date": "2026-11-14",
@@ -415,6 +455,10 @@
   },
   "SNAuFsdp884": {
    "date": "2026-11-17",
+   "status": "short_skipped"
+  },
+  "T-pPu2b_mjA": {
+   "date": "2026-11-18",
    "status": "short_skipped"
   },
   "TnCpltH2ppc": {
@@ -493,6 +537,11 @@
   "_P7_fQ-ErYc": {
    "date": "2026-08-18",
    "status": "seeded"
+  },
+  "aD96gvuv_uA": {
+   "date": "2026-11-18",
+   "status": "done",
+   "type": "guest_podcast"
   },
   "bSE3zmt4_uY": {
    "date": "2026-10-30",
@@ -642,6 +691,11 @@
    "date": "2026-11-07",
    "status": "seeded"
   },
+  "mRFyCeTHM7k": {
+   "date": "2026-11-18",
+   "status": "done",
+   "type": "ipo_analysis"
+  },
   "mgnhfWQ83aI": {
    "date": "2026-11-10",
    "status": "seeded"
@@ -670,6 +724,10 @@
   "pN-lKatXTv0": {
    "date": "2026-11-07",
    "status": "seeded"
+  },
+  "peXVWQReT1M": {
+   "date": "2026-11-18",
+   "status": "short_skipped"
   },
   "q-fqRu54s_o": {
    "date": "2026-11-14",
