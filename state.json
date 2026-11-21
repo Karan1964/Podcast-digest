@@ -163,6 +163,10 @@
    "date": "2026-10-26",
    "status": "seeded"
   },
+  "6Y3GzGlbDr0": {
+   "date": "2026-11-21",
+   "status": "one_line"
+  },
   "7Ksuppm0F08": {
    "date": "2026-11-05",
    "status": "seeded"
@@ -288,6 +292,10 @@
    "date": "2026-10-22",
    "status": "seeded"
   },
+  "DFWiTr6lNVc": {
+   "date": "2026-11-21",
+   "status": "short_skipped"
+  },
   "DnvvJvObuPs": {
    "date": "2026-11-16",
    "status": "done",
@@ -337,6 +345,10 @@
   "HIdaO553UMA": {
    "date": "2026-11-01",
    "status": "seeded"
+  },
+  "HRO-BW7MWnQ": {
+   "date": "2026-11-21",
+   "status": "one_line"
   },
   "HRu4ytRYZcc": {
    "date": "2026-11-04",
@@ -606,6 +618,10 @@
    "date": "2026-11-02",
    "status": "seeded"
   },
+  "dE5ofdBDi4M": {
+   "date": "2026-11-21",
+   "status": "short_skipped"
+  },
   "dOhaY5oBIDE": {
    "date": "2026-10-21",
    "status": "seeded"
@@ -817,6 +833,10 @@
    "status": "done",
    "type": "guest_podcast"
   },
+  "rxfCAot0YXw": {
+   "date": "2026-11-21",
+   "status": "short_skipped"
+  },
   "sEb4txqm-5M": {
    "date": "2026-09-27",
    "status": "seeded"
@@ -824,6 +844,10 @@
   "sdG9b3Xue-k": {
    "date": "2026-08-30",
    "status": "seeded"
+  },
+  "sebseNOoVg4": {
+   "date": "2026-11-21",
+   "status": "short_skipped"
   },
   "tCMHvd8UnzU": {
    "date": "2026-11-09",
@@ -846,13 +870,26 @@
    "status": "done",
    "type": "stock_analysis"
   },
+  "uli9Dh5sM0Q": {
+   "date": "2026-11-21",
+   "status": "done",
+   "type": "stock_analysis"
+  },
   "vAC8EdDY57A": {
    "date": "2026-08-26",
    "status": "seeded"
   },
+  "vN384WiYFmM": {
+   "date": "2026-11-21",
+   "status": "short_skipped"
+  },
   "vOsIHzZnEmk": {
    "date": "2026-08-23",
    "status": "seeded"
+  },
+  "w7ZkMNfK1FQ": {
+   "date": "2026-11-21",
+   "status": "short_skipped"
   },
   "wIaODBl1SCI": {
    "date": "2026-11-14",
@@ -885,6 +922,11 @@
   "y7pwGVQEiKc": {
    "date": "2026-09-24",
    "status": "seeded"
+  },
+  "yRQaEDd6j_g": {
+   "date": "2026-11-21",
+   "status": "done",
+   "type": "ipo_analysis"
   },
   "yvCdbOgUYxQ": {
    "date": "2026-11-17",
