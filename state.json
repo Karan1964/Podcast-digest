@@ -1,5 +1,7 @@
 {
- "attempts": {},
+ "attempts": {
+  "kpEWglWTgQw": 1
+ },
  "channel_ids": {
   "akshatzayn": "UCqW8jxh4tH1Z1sWPbkGWL4g",
   "anantladhaofficial": "UCWHCXSKASuSzao_pplQ7SPw",
@@ -27,7 +29,16 @@
   "thebroadview"
  ],
  "initialised": true,
- "pending": {},
+ "pending": {
+  "kpEWglWTgQw": {
+   "channel_name": "Kushal Lodha",
+   "description": "\u27a1 Recommend A Guest For Our Podcast Here - https://forms.gle/eotmhzWMx6KpJQH86\n\n\u27a1 The 9:15 Club - India\u2019s smartest young investors community: \nhttps://forms.gle/stVcwXY3CSTQJWAG6\n\n\u27a1 Join This Group To Be Invited To Future Offline KwK Events in Mumbai: https://chat.whatsapp.com/F3MbHDPwTwC11mnSuvVc1M?mode=gi_t\n\nIan Cassel, micro cap investor and founder of MicroCapClub, joins Kushal to break down how he finds multibaggers before the crowd.\n\nWhat You'll Learn:\n\n1-Deep Value to Growth: Multibaggers start cheap and get re-rated as earnings grow.\n2-Average Up, Not Down: Add to winners where management keeps executing.\n3-Bet on People: Great management matters more than the asset.\n\n\ud83d\udd14 Hit SUBSCRIBE and turn on notifications so you never miss a deep dive with India's sharpest investing minds!\n\n#KonversationWithKushal #IanCassel #MicroCapClub #MicrocapInvesting #MultibaggerStocks #StockPicking #ValueInvesting #StockMarket #InvestingTips #KushalLodha\n\n\u27a1 Order my book 'Acing CA' here:\nhttps://www.amazon.in/dp/8195816886?ref_=cm_sw_r_cp_ud_dp_X13KX7DBZEK4FDZ2ATBX \n\n\u27a1 Order my book 'Unlocking Unicorn Secrets' here:\nhttps://www.amazon.in/dp/0143461605?ref_=cm_sw_r_cp_ud_dp_2N298HH57745310Z4TAM\n\nFollow Kushal Lodha on Social Media:\n\ud83d\udcdd  LinkedIn: https://in.linkedin.com/in/kushallodha548 \n \ud83d\udcf7 Instagram: https://www.instagram.com/kushallodha548/  \n\ud83d\udcf1 Twitter: https://twitter.com/kushallodha548  \n\nFollow guest on Social Media:\n\ud83d\udcdd  LinkedIn: https://www.linkedin.com/in/iancassel/ \n\ud83d\udcf1 Twitter: https://x.com/iancassel?lang=en\n\nTimestamp:\n00:00:00 Trailer & Intro\n00:03:41 5 Skills Of A Stock Picker\n00:04:08 Identifying Ideas Before Others\n00:07:40 His Stock Screening Process\n00:08:34 Betting On Management Transitions\n00:11:07 Secret To Finding Multibaggers\n00:15:38 Don't Buy & Hold: Rent Stocks\n00:17:49 What Are Story Stocks?\n00:22:44 Investing In Gold Miners\n00:28:36 Position Sizing\n00:32:30 Averaging Up vs Averaging Down Stocks\n00:35:18 The 90-9-1 Rule Of Winners\n00:37:37 Never Sell Out Com",
+   "handle": "kushallodha548",
+   "id": "kpEWglWTgQw",
+   "published": "2026-11-21T14:27:15+00:00",
+   "title": "How to Find, Buy, Hold & Sell Multibagger Stocks | Ian Cassel Masterclass | Kushal Lodha #409"
+  }
+ },
  "processed": {
   "-7kAixdHbc4": {
    "date": "2026-11-04",
@@ -78,9 +89,18 @@
    "date": "2026-11-16",
    "status": "short_skipped"
   },
+  "1uZpiyNCseI": {
+   "date": "2026-11-22",
+   "status": "done",
+   "type": "guest_podcast"
+  },
   "1ziz22KHyC4": {
    "date": "2026-09-09",
    "status": "seeded"
+  },
+  "2Bf_WHqMJLc": {
+   "date": "2026-11-22",
+   "status": "short_skipped"
   },
   "2D9LAPISQQM": {
    "date": "2026-11-14",
@@ -162,6 +182,10 @@
   "6JCG6aLWjkY": {
    "date": "2026-10-26",
    "status": "seeded"
+  },
+  "6NS3M1-bv-U": {
+   "date": "2026-11-22",
+   "status": "short_skipped"
   },
   "6Y3GzGlbDr0": {
    "date": "2026-11-21",
@@ -492,6 +516,10 @@
    "date": "2026-11-17",
    "status": "short_skipped"
   },
+  "STOhl8fjGcY": {
+   "date": "2026-11-22",
+   "status": "short_skipped"
+  },
   "T-pPu2b_mjA": {
    "date": "2026-11-18",
    "status": "short_skipped"
@@ -654,6 +682,10 @@
    "date": "2026-11-07",
    "status": "seeded"
   },
+  "gBbi407tUkE": {
+   "date": "2026-11-22",
+   "status": "short_skipped"
+  },
   "gFrO5nl0yUk": {
    "date": "2026-10-28",
    "status": "seeded"
@@ -702,6 +734,10 @@
    "date": "2026-11-07",
    "status": "seeded"
   },
+  "jUrcz9y1UlQ": {
+   "date": "2026-11-22",
+   "status": "short_skipped"
+  },
   "jzS1BVxs__o": {
    "date": "2026-11-06",
    "status": "seeded"
@@ -731,6 +767,10 @@
   "kyrP33EhJOI": {
    "date": "2026-11-03",
    "status": "seeded"
+  },
+  "l19TNlXlnio": {
+   "date": "2026-11-22",
+   "status": "short_skipped"
   },
   "l672H2njNww": {
    "date": "2026-11-17",
@@ -828,6 +868,10 @@
    "date": "2026-11-10",
    "status": "seeded"
   },
+  "rkYCae8yViU": {
+   "date": "2026-11-22",
+   "status": "short_skipped"
+  },
   "rps2rZtWdlg": {
    "date": "2026-11-14",
    "status": "done",
@@ -890,6 +934,10 @@
   "w7ZkMNfK1FQ": {
    "date": "2026-11-21",
    "status": "short_skipped"
+  },
+  "wAjYsCrshF8": {
+   "date": "2026-11-22",
+   "status": "one_line"
   },
   "wIaODBl1SCI": {
    "date": "2026-11-14",
