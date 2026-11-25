@@ -1,8 +1,5 @@
 {
- "attempts": {
-  "JhOer1CmP70": 1,
-  "R_GPXyQPyp8": 1
- },
+ "attempts": {},
  "channel_ids": {
   "akshatzayn": "UCqW8jxh4tH1Z1sWPbkGWL4g",
   "anantladhaofficial": "UCWHCXSKASuSzao_pplQ7SPw",
@@ -30,24 +27,7 @@
   "thebroadview"
  ],
  "initialised": true,
- "pending": {
-  "JhOer1CmP70": {
-   "channel_name": "Anant Ladha",
-   "description": "US Debt bubble burst?\n\nUS Debt Bubble Burst? Is the World's Largest Economy Heading Towards a Financial Crisis?\n\nAmerica's rising debt is becoming one of the biggest concerns for the global economy. But can the US really face a debt crisis?\n\nIn this video, we decode America's debt problem, rising interest payments, the Federal Reserve's role, the GENIUS Act, stablecoins, US Treasury bonds, gold reserves, and Bitcoin.\n\n\n#upstoxhaitohbetterhai #upstox \n\n\n---------------------------------------------------------------------------------------------------------\n\n\n\nConnect with us- \nFree Telegram channel - https://t.me/anantladhaofficialid \nFacebook- https://www.facebook.com/anantladha1234?mibextid=ZbWKwL\nInstagram- https://www.instagram.com/anantladha1234\nTwitter - https://twitter.com/anantladha25?s=09\n\nDisclaimer - This is our personal view and mutual funds and equity investments are subject to market risk. Please read all offer documents before investing. This video is only for education purpose. Please consult your adviser before investing. This video is only to give information and only for education purpose.",
-   "handle": "anantladhaofficial",
-   "id": "JhOer1CmP70",
-   "published": "2026-11-23T14:03:28+00:00",
-   "title": "US 40 trillion $ debt and world market crash!"
-  },
-  "R_GPXyQPyp8": {
-   "channel_name": "Akshat Shrivastava",
-   "description": "\ud83d\udc49 Join Wisdom Hatch Global Investing Community. And, Invest with Akshat (track every trade): https://wisdomhatch.com/courses/global-investing-community/\n________________\n\ud83d\udc49 I use Vested to invest in US Stocks. EXCLUSIVE $10 bonus on 1st Deposit if you sign up using this link:\nhttps://vested.app.link/akshat\n\n[DISCLAIMER: US Securities on Vested are offered through VF Securities Inc.. This post is in partnership with and sponsored by Vested. Creator may also hold shares in Vested]\n________________\n\ud83d\udc49 Get daily stock market updates: (only at 179/month):\nhttps://www.youtube.com/channel/UCqW8jxh4tH1Z1sWPbkGWL4g/join\n______________\nWith the latest whispers going around a possibility of AI-bubble burst, what does the future of US Stock market look like?\n\nAnd am I going to invest in the market still?\n\nWe discuss the same in this video. Watch till the end.\n\nPLEASE NOTE: THIS IS NOT AN INVESTMENT ADVICE. PLEASE DO YOUR OWN DUE DILIGENCE\n****\nLinkedin\u25bahttps://www.linkedin.com/in/akshatshrivastavainsead/\nTwitter\u25bahttps://twitter.com/Akshat_World\nInstagram\u25ba https://www.instagram.com/akshat.world/\n***********************\nAttributions:\nStock videos from Pixabay and Pexels\nLogos: Wikipedia Commons",
-   "handle": "akshatzayn",
-   "id": "R_GPXyQPyp8",
-   "published": "2026-11-23T15:09:19+00:00",
-   "title": "I'm buying MORE AI stocks (& you should too!) -- here is why? | Akshat Shrivastava"
-  }
- },
+ "pending": {},
  "processed": {
   "-7kAixdHbc4": {
    "date": "2026-11-04",
@@ -143,6 +123,10 @@
    "date": "2026-11-14",
    "status": "short_skipped"
   },
+  "3KsZbXHfxnM": {
+   "date": "2026-11-25",
+   "status": "short_skipped"
+  },
   "3leqzscJ7UI": {
    "date": "2026-11-08",
    "status": "seeded"
@@ -158,6 +142,15 @@
   "4WvqWxmPynM": {
    "date": "2026-10-07",
    "status": "seeded"
+  },
+  "4cdB_D6ot_Q": {
+   "date": "2026-11-25",
+   "status": "done",
+   "type": "guest_podcast"
+  },
+  "4zXfimmK9to": {
+   "date": "2026-11-25",
+   "status": "short_skipped"
   },
   "5--Q4m3ZcxY": {
    "date": "2026-11-02",
@@ -199,6 +192,11 @@
   "6Y3GzGlbDr0": {
    "date": "2026-11-21",
    "status": "one_line"
+  },
+  "735Ro_HVWjQ": {
+   "date": "2026-11-25",
+   "status": "done",
+   "type": "guest_podcast"
   },
   "7Ksuppm0F08": {
    "date": "2026-11-05",
@@ -266,6 +264,10 @@
   "A39iY5_orVk": {
    "date": "2026-10-04",
    "status": "seeded"
+  },
+  "A4KuNJMUXXQ": {
+   "date": "2026-11-25",
+   "status": "short_skipped"
   },
   "ANs8CsVAfMg": {
    "date": "2026-11-06",
@@ -387,6 +389,10 @@
    "date": "2026-11-03",
    "status": "seeded"
   },
+  "GN8yqHPJeaI": {
+   "date": "2026-11-25",
+   "status": "short_skipped"
+  },
   "HIdaO553UMA": {
    "date": "2026-11-01",
    "status": "seeded"
@@ -405,6 +411,10 @@
   },
   "H_iOwcpraG4": {
    "date": "2026-11-17",
+   "status": "short_skipped"
+  },
+  "HcpVVaLaDGo": {
+   "date": "2026-11-25",
    "status": "short_skipped"
   },
   "HhVEqSDl6Hc": {
@@ -446,6 +456,11 @@
   "Jfq52stqtxY": {
    "date": "2026-11-24",
    "status": "short_skipped"
+  },
+  "JhOer1CmP70": {
+   "date": "2026-11-25",
+   "status": "done",
+   "type": "event_coverage"
   },
   "JtTvrLIpxxE": {
    "date": "2026-11-04",
@@ -546,6 +561,11 @@
    "date": "2026-11-14",
    "status": "seeded"
   },
+  "R_GPXyQPyp8": {
+   "date": "2026-11-25",
+   "status": "done",
+   "type": "market_outlook"
+  },
   "Rcda9Mk8E40": {
    "date": "2026-10-27",
    "status": "seeded"
@@ -592,6 +612,10 @@
   },
   "UnPI7UGxvi8": {
    "date": "2026-11-20",
+   "status": "short_skipped"
+  },
+  "Vn66tSkXstQ": {
+   "date": "2026-11-25",
    "status": "short_skipped"
   },
   "Vpzu0wZvWa0": {
@@ -680,6 +704,10 @@
    "date": "2026-08-18",
    "status": "seeded"
   },
+  "_vl7SCxAXXs": {
+   "date": "2026-11-25",
+   "status": "short_skipped"
+  },
   "aD96gvuv_uA": {
    "date": "2026-11-18",
    "status": "done",
@@ -707,6 +735,10 @@
   },
   "crm0tjmeLLc": {
    "date": "2026-11-15",
+   "status": "short_skipped"
+  },
+  "ctU4j-8PrhQ": {
+   "date": "2026-11-25",
    "status": "short_skipped"
   },
   "cxdRzgZC8ks": {
@@ -827,6 +859,11 @@
    "date": "2026-11-14",
    "status": "short_skipped"
   },
+  "kVr5P8fr378": {
+   "date": "2026-11-25",
+   "status": "done",
+   "type": "stock_analysis"
+  },
   "khbTXnrd8Ik": {
    "date": "2026-11-14",
    "status": "short_skipped"
@@ -888,6 +925,10 @@
   "mkSePlEc4SA": {
    "date": "2026-08-16",
    "status": "seeded"
+  },
+  "mnS7htOzzQw": {
+   "date": "2026-11-25",
+   "status": "one_line"
   },
   "n22YvbISGg0": {
    "date": "2026-11-17",
@@ -951,6 +992,10 @@
    "date": "2026-11-22",
    "status": "short_skipped"
   },
+  "rpUxCLPWPIU": {
+   "date": "2026-11-25",
+   "status": "short_skipped"
+  },
   "rps2rZtWdlg": {
    "date": "2026-11-14",
    "status": "done",
@@ -975,6 +1020,10 @@
   "tCMHvd8UnzU": {
    "date": "2026-11-09",
    "status": "seeded"
+  },
+  "tLh66jLeDOY": {
+   "date": "2026-11-25",
+   "status": "short_skipped"
   },
   "taVNHqBnOug": {
    "date": "2026-11-19",
@@ -1074,6 +1123,11 @@
   "zD2_jlkKWPg": {
    "date": "2026-10-14",
    "status": "seeded"
+  },
+  "zQQN-m9qFcU": {
+   "date": "2026-11-25",
+   "status": "done",
+   "type": "guest_podcast"
   },
   "zWU3bTHd0t4": {
    "date": "2026-09-20",
