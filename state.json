@@ -58,6 +58,14 @@
    "date": "2026-11-08",
    "status": "seeded"
   },
+  "0FsQwnZjdQY": {
+   "date": "2026-11-26",
+   "status": "short_skipped"
+  },
+  "0ItkOe205S8": {
+   "date": "2026-11-26",
+   "status": "short_skipped"
+  },
   "0V8qbbD0jCQ": {
    "date": "2026-11-14",
    "status": "short_skipped"
@@ -156,6 +164,10 @@
    "date": "2026-11-02",
    "status": "seeded"
   },
+  "5QlA9FGSbTk": {
+   "date": "2026-11-26",
+   "status": "short_skipped"
+  },
   "5a5vEOBlQ4I": {
    "date": "2026-11-14",
    "status": "short_skipped"
@@ -218,6 +230,10 @@
   "7jAPwT6_6cA": {
    "date": "2026-11-14",
    "status": "seeded"
+  },
+  "7lcGHfaPBoY": {
+   "date": "2026-11-26",
+   "status": "short_skipped"
   },
   "7x2lgRDuv8Y": {
    "date": "2026-08-26",
@@ -614,6 +630,11 @@
    "date": "2026-11-20",
    "status": "short_skipped"
   },
+  "UzZ6_5bgCWY": {
+   "date": "2026-11-26",
+   "status": "done",
+   "type": "guest_podcast"
+  },
   "Vn66tSkXstQ": {
    "date": "2026-11-25",
    "status": "short_skipped"
@@ -659,6 +680,11 @@
    "date": "2026-11-14",
    "status": "seeded"
   },
+  "XU7awJ8YlYo": {
+   "date": "2026-11-26",
+   "status": "done",
+   "type": "market_outlook"
+  },
   "XzljzaQ0Y6E": {
    "date": "2026-11-23",
    "status": "short_skipped"
@@ -679,6 +705,10 @@
    "date": "2026-11-16",
    "status": "done",
    "type": "stock_analysis"
+  },
+  "Yv8ShyZwDDE": {
+   "date": "2026-11-26",
+   "status": "short_skipped"
   },
   "Yx7P3W7h0Xc": {
    "date": "2026-11-15",
@@ -780,6 +810,11 @@
   "fehPsfmBcro": {
    "date": "2026-11-07",
    "status": "seeded"
+  },
+  "foNBfn_9Zlw": {
+   "date": "2026-11-26",
+   "status": "done",
+   "type": "market_outlook"
   },
   "gBbi407tUkE": {
    "date": "2026-11-22",
