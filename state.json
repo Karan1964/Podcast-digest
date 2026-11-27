@@ -78,6 +78,10 @@
    "date": "2026-11-06",
    "status": "seeded"
   },
+  "1NH1I-tkPHs": {
+   "date": "2026-11-27",
+   "status": "short_skipped"
+  },
   "1YA9vkM6wGk": {
    "date": "2026-11-14",
    "status": "short_skipped"
@@ -101,6 +105,10 @@
   },
   "2D9LAPISQQM": {
    "date": "2026-11-14",
+   "status": "short_skipped"
+  },
+  "2HvmJNNxAlc": {
+   "date": "2026-11-27",
    "status": "short_skipped"
   },
   "2McQSHZN1hE": {
@@ -142,6 +150,11 @@
   "3svGEjksjyU": {
    "date": "2026-11-02",
    "status": "seeded"
+  },
+  "4C6kwRkqZso": {
+   "date": "2026-11-27",
+   "status": "done",
+   "type": "stock_analysis"
   },
   "4H7uyVO6BKc": {
    "date": "2026-10-29",
@@ -283,6 +296,10 @@
   },
   "A4KuNJMUXXQ": {
    "date": "2026-11-25",
+   "status": "short_skipped"
+  },
+  "ALD-eIbFbgw": {
+   "date": "2026-11-27",
    "status": "short_skipped"
   },
   "ANs8CsVAfMg": {
@@ -498,6 +515,10 @@
    "date": "2026-09-19",
    "status": "seeded"
   },
+  "Kljo02u3CVE": {
+   "date": "2026-11-27",
+   "status": "short_skipped"
+  },
   "Kpe341R-1mQ": {
    "date": "2026-11-07",
    "status": "seeded"
@@ -643,6 +664,11 @@
    "date": "2026-11-06",
    "status": "seeded"
   },
+  "W0mb6VLYi2o": {
+   "date": "2026-11-27",
+   "status": "done",
+   "type": "guest_podcast"
+  },
   "WGc49i6zITc": {
    "date": "2026-11-14",
    "status": "one_line"
@@ -734,6 +760,11 @@
    "date": "2026-08-18",
    "status": "seeded"
   },
+  "_X-WpZ0FNKc": {
+   "date": "2026-11-27",
+   "status": "done",
+   "type": "guest_podcast"
+  },
   "_vl7SCxAXXs": {
    "date": "2026-11-25",
    "status": "short_skipped"
@@ -803,6 +834,11 @@
    "date": "2026-09-24",
    "status": "seeded"
   },
+  "f70ASO1C6fQ": {
+   "date": "2026-11-27",
+   "status": "done",
+   "type": "guest_podcast"
+  },
   "fVOMsnOuhXs": {
    "date": "2026-11-09",
    "status": "seeded"
@@ -827,6 +863,10 @@
   "gObb-qwgQ6g": {
    "date": "2026-10-11",
    "status": "seeded"
+  },
+  "gkuErXGmzeI": {
+   "date": "2026-11-27",
+   "status": "short_skipped"
   },
   "hEot0Z0Z5As": {
    "date": "2026-09-10",
@@ -863,6 +903,14 @@
   "iZLyYGsGnis": {
    "date": "2026-11-08",
    "status": "seeded"
+  },
+  "idVDbkuR1nM": {
+   "date": "2026-11-27",
+   "status": "short_skipped"
+  },
+  "idflGoAnwGk": {
+   "date": "2026-11-27",
+   "status": "short_skipped"
   },
   "it9yBbcWoIk": {
    "date": "2026-11-11",
@@ -922,6 +970,11 @@
   "l672H2njNww": {
    "date": "2026-11-17",
    "status": "short_skipped"
+  },
+  "lCGW1FX7KTE": {
+   "date": "2026-11-27",
+   "status": "done",
+   "type": "market_outlook"
   },
   "lOCSVb3qRQ8": {
    "date": "2026-11-14",
@@ -1172,9 +1225,18 @@
    "date": "2026-11-12",
    "status": "seeded"
   },
+  "z_EB66DvShA": {
+   "date": "2026-11-27",
+   "status": "short_skipped"
+  },
   "zas0ezJHCqY": {
    "date": "2026-09-17",
    "status": "seeded"
+  },
+  "zxFK4EKimio": {
+   "date": "2026-11-27",
+   "status": "done",
+   "type": "guest_podcast"
   }
  }
 }
