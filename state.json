@@ -37,6 +37,10 @@
    "date": "2026-11-11",
    "status": "seeded"
   },
+  "-Dc0ikax82E": {
+   "date": "2026-11-28",
+   "status": "short_skipped"
+  },
   "-Gps5TZWcAU": {
    "date": "2026-10-30",
    "status": "seeded"
@@ -462,6 +466,10 @@
    "date": "2026-11-10",
    "status": "seeded"
   },
+  "IC_aT8o3gbE": {
+   "date": "2026-11-28",
+   "status": "one_line"
+  },
   "ICz5ejNhJFc": {
    "date": "2026-09-13",
    "status": "seeded"
@@ -545,6 +553,10 @@
    "date": "2026-11-06",
    "status": "seeded"
   },
+  "Neuq15PcID4": {
+   "date": "2026-11-28",
+   "status": "short_skipped"
+  },
   "NhDGhnL5ofs": {
    "date": "2026-11-07",
    "status": "seeded"
@@ -556,6 +568,11 @@
   "OZM4QSzBT9A": {
    "date": "2026-08-09",
    "status": "seeded"
+  },
+  "PL4rXJSFP3E": {
+   "date": "2026-11-28",
+   "status": "done",
+   "type": "guest_podcast"
   },
   "PhktKHgJ34c": {
    "date": "2026-10-30",
@@ -572,6 +589,10 @@
   },
   "Q9CxvEccJZU": {
    "date": "2026-11-23",
+   "status": "short_skipped"
+  },
+  "QLjfYhuT98U": {
+   "date": "2026-11-28",
    "status": "short_skipped"
   },
   "QkGt5bwnjYk": {
@@ -711,6 +732,10 @@
    "status": "done",
    "type": "market_outlook"
   },
+  "XWhKDiVaIUo": {
+   "date": "2026-11-28",
+   "status": "short_skipped"
+  },
   "XzljzaQ0Y6E": {
    "date": "2026-11-23",
    "status": "short_skipped"
@@ -777,6 +802,11 @@
   "agCx2ksG5Xk": {
    "date": "2026-11-20",
    "status": "short_skipped"
+  },
+  "bIDLvCE3A_g": {
+   "date": "2026-11-28",
+   "status": "done",
+   "type": "market_outlook"
   },
   "bSE3zmt4_uY": {
    "date": "2026-10-30",
@@ -984,6 +1014,10 @@
    "date": "2026-11-10",
    "status": "seeded"
   },
+  "ld9PIIJ6UuA": {
+   "date": "2026-11-28",
+   "status": "short_skipped"
+  },
   "luT5Rva91XM": {
    "date": "2026-11-05",
    "status": "seeded"
@@ -1151,6 +1185,10 @@
    "date": "2026-08-23",
    "status": "seeded"
   },
+  "w35anwitE8o": {
+   "date": "2026-11-28",
+   "status": "short_skipped"
+  },
   "w7ZkMNfK1FQ": {
    "date": "2026-11-21",
    "status": "short_skipped"
@@ -1196,6 +1234,11 @@
    "status": "done",
    "type": "ipo_analysis"
   },
+  "ylOq5oqgcGQ": {
+   "date": "2026-11-28",
+   "status": "done",
+   "type": "guest_podcast"
+  },
   "yvCdbOgUYxQ": {
    "date": "2026-11-17",
    "status": "short_skipped"
@@ -1211,6 +1254,10 @@
   "zD2_jlkKWPg": {
    "date": "2026-10-14",
    "status": "seeded"
+  },
+  "zIK43zdnPFc": {
+   "date": "2026-11-28",
+   "status": "one_line"
   },
   "zQQN-m9qFcU": {
    "date": "2026-11-25",
